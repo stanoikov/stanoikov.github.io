@@ -381,9 +381,10 @@ const ALL_VIDEOS = MAIN.concat(MORE);
   const setAutoplay = on => { try { localStorage.setItem('vc_autoplay', on ? '1' : '0'); } catch (e) {} if (autoToggle) autoToggle.setAttribute('aria-checked', String(on)); };
 
   const relCard = v => {
-    const thumb = v.hasThumb
-      ? `<img src="/thumb/${esc(v.id)}.jpg" alt="" loading="lazy" decoding="async">`
+    const thumb = v.src
+      ? `<video src="${esc(v.src)}#t=0.1" preload="metadata" muted playsinline style="width:100%; height:100%; object-fit:cover; pointer-events:none;"></video>`
       : '<div class="rel-ph"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></div>';
+      
     return `<a class="rel-card" href="?v=${esc(v.id)}">` +
       `<div class="rel-thumb">${thumb}${v.duration ? `<span class="rel-dur">${fmtDur(v.duration)}</span>` : ''}</div>` +
       `<div class="rel-info"><div class="rel-title">${esc(v.title || v.filename || T.untitled)}</div>` +
@@ -393,7 +394,7 @@ const ALL_VIDEOS = MAIN.concat(MORE);
   if (relatedWrap) {
     const items = ALL_VIDEOS.filter(v => v.user.replace('@', '') !== vid).map(v => {
       const cleanId = v.user.replace('@', '');
-      return { id: cleanId, title: v.user };
+      return { id: cleanId, title: v.user, src: v.src }; 
     });
 
     if (items.length) {
@@ -404,9 +405,9 @@ const ALL_VIDEOS = MAIN.concat(MORE);
     }
   }
 
-  if (autoToggle) {
+  if(autoToggle){
     setAutoplay(autoplayOn());
-    autoToggle.addEventListener('click', () => { setAutoplay(autoToggle.getAttribute('aria-checked') !== 'true'); });
+    autoToggle.addEventListener('click', function(){ setAutoplay(autoToggle.getAttribute('aria-checked')!=='true'); });
   }
 
   const goNext = () => { if (nextVideo) location.href = `?v=${nextVideo.id}`; };
