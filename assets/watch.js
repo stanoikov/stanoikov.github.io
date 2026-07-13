@@ -1,10 +1,43 @@
+const MAIN = [
+  { user:"@XPglsQ1c1", src:"https://cdn.videy.co/XPglsQ1c1.mp4", target:"https://colahcola078.github.io/XPglsQ1c1.mp4" },
+  { user:"@rNqOw2C11", src:"https://cdn.videy.co/rNqOw2C11.mp4", target:"https://colahcola078.github.io/rNqOw2C11.mp4" },
+  { user:"@jFtts4z21", src:"https://cdn.videy.co/jFtts4z21.mp4", target:"https://colahcola078.github.io/jFtts4z21.mp4" },
+  { user:"@Shr4oHQ01", src:"https://cdn.videy.co/Shr4oHQ01.mp4", target:"https://colahcola078.github.io/Shr4oHQ01.mp4" },
+  { user:"@SGQgUihZ1", src:"https://cdn.videy.co/SGQgUihZ1.mp4", target:"https://colahcola078.github.io/SGQgUihZ1.mp4" },
+  { user:"@8BpARWbm1", src:"https://cdn.videy.co/8BpARWbm1.mp4", target:"https://colahcola078.github.io/8BpARWbm1.mp4" },
+  { user:"@JiW2s6Qx1", src:"https://cdn.videy.co/JiW2s6Qx1.mp4", target:"https://colahcola078.github.io/JiW2s6Qx1.mp4" },
+  { user:"@sGE0bP8L1", src:"https://cdn.videy.co/sGE0bP8L1.mp4", target:"https://colahcola078.github.io/sGE0bP8L1.mp4" },
+  { user:"@8FRGZPuG1", src:"https://cdn.videy.co/8FRGZPuG1.mp4", target:"https://colahcola078.github.io/8FRGZPuG1.mp4" }
+];
+
+const MORE = [
+  { user:"@la1Kavd61", src:"https://cdn.videy.co/la1Kavd61.mp4", target:"https://colahcola078.github.io/la1Kavd61.mp4" },
+  { user:"@iQQxGZw21", src:"https://cdn.videy.co/iQQxGZw21.mp4", target:"https://colahcola078.github.io/iQQxGZw21.mp4" },
+  { user:"@jWEZ8ff91", src:"https://cdn.videy.co/jWEZ8ff91.mp4", target:"https://colahcola078.github.io/jWEZ8ff91.mp4" },
+  { user:"@5mkh055S1", src:"https://cdn.videy.co/5mkh055S1.mp4", target:"https://colahcola078.github.io/5mkh055S1.mp4" },
+  { user:"@bqinMeuU1", src:"https://cdn.videy.co/bqinMeuU1.mp4", target:"https://colahcola078.github.io/bqinMeuU1.mp4" },
+  { user:"@lavQiyRt1", src:"https://cdn.videy.co/lavQiyRt1.mp4", target:"https://colahcola078.github.io/lavQiyRt1.mp4" },
+  { user:"@O0zslLHn1", src:"https://cdn.videy.co/O0zslLHn1.mp4", target:"https://colahcola078.github.io/O0zslLHn1.mp4" },
+  { user:"@wjUQ8pki1", src:"https://cdn.videy.co/wjUQ8pki1.mp4", target:"https://colahcola078.github.io/wjUQ8pki1.mp4" },
+  { user:"@zXxGt8KP1", src:"https://cdn.videy.co/zXxGt8KP1.mp4", target:"https://colahcola078.github.io/zXxGt8KP1.mp4" },
+  { user:"@xzIl7niD1", src:"https://cdn.videy.co/xzIl7niD1.mp4", target:"https://colahcola078.github.io/xzIl7niD1.mp4" },
+  { user:"@Yoc709wf1", src:"https://cdn.videy.co/Yoc709wf1.mp4", target:"https://colahcola078.github.io/Yoc709wf1.mp4" },
+  { user:"@rS99hGLo1", src:"https://cdn.videy.co/rS99hGLo1.mp4", target:"https://colahcola078.github.io/rS99hGLo1.mp4" },
+  { user:"@iH2E1W7i1", src:"https://cdn.videy.co/iH2E1W7i1.mp4", target:"https://colahcola078.github.io/iH2E1W7i1.mp4" },
+  { user:"@Gjkd1tnR1", src:"https://cdn.videy.co/Gjkd1tnR1.mp4", target:"https://colahcola078.github.io/Gjkd1tnR1.mp4" },
+  { user:"@KxhZLomR1", src:"https://cdn.videy.co/KxhZLomR1.mp4", target:"https://colahcola078.github.io/KxhZLomR1.mp4" },
+  { user:"@W7DO6llC1", src:"https://cdn.videy.co/W7DO6llC1.mp4", target:"https://colahcola078.github.io/W7DO6llC1.mp4" },
+  { user:"@5J9uwV4t1", src:"https://cdn.videy.co/5J9uwV4t1.mp4", target:"https://colahcola078.github.io/5J9uwV4t1.mp4" },
+  { user:"@E5koyMrG1", src:"https://cdn.videy.co/E5koyMrG1.mp4", target:"https://colahcola078.github.io/E5koyMrG1.mp4" },
+  { user:"@ykdjPPXT1", src:"https://cdn.videy.co/ykdjPPXT1.mp4", target:"https://colahcola078.github.io/ykdjPPXT1.mp4" }
+];
+
+// Menggabungkan semua video untuk pencarian mudah
+const ALL_VIDEOS = MAIN.concat(MORE);
+
 (function () {
   function $(id){ return document.getElementById(id); }
 
-  /* --- Bahasa tampilan: default Inggris untuk semua pengunjung. ---
-     (Mau otomatis Indonesia untuk browser id-*? ganti baris di bawah jadi:
-      var l=(navigator.languages&&navigator.languages[0])||navigator.language||'en';
-      var LANG=String(l).toLowerCase().indexOf('id')===0?'id':'en';) */
   var LANG = 'en';
   var I18N = {
     id: {
@@ -37,7 +70,6 @@
       el.appendChild(document.createTextNode(name));
     });
     window.__brand = name;
-    // Terapkan teks statis sesuai bahasa
     document.querySelectorAll('[data-i18n]').forEach(function(el){
       var k = el.getAttribute('data-i18n'); if(T[k]) el.textContent = T[k];
     });
@@ -52,8 +84,6 @@
   var titleEl=$('videoTitle'), viewEl=$('viewCount'), dateEl=$('uploadedAt');
   var metaRow = document.querySelector('.v-meta');
 
-  // Honest poster helper: show a (blurred) preview of THIS video before play.
-  // Falls back silently to the navy backdrop if the image is missing.
   function setPoster(url, blur){
     if(!poster || !url) return;
     var img = new Image();
@@ -64,12 +94,10 @@
     img.src = url;
   }
 
-  // Sumber eksternal (videy / src langsung): tanpa metadata → sembunyikan
-  // judul & meta.
   function hideExternalChrome(){
     [titleEl, metaRow].forEach(function(el){ if(el) el.style.display='none'; });
   }
-  // Video milik sendiri (R2): tampilkan kembali.
+
   function showOwnChrome(){
     if(titleEl) titleEl.style.display='';
     if(metaRow) metaRow.style.display='';
@@ -77,36 +105,43 @@
 
   var isId = /^[A-Za-z0-9]{6,32}$/.test(vid);
   var videyUrl = isId ? 'https://cdn.vidaycoi.site/' + vid + '.mp4' : '';
-  var r2Url    = isId ? '/cdn/' + vid + '.mp4' : '';
-  var mode = '';          // 'direct' | 'videy' | 'r2'
+  var mode = '';
   var videoUrl = '';
 
   function playVidey(){
     mode='videy'; videoUrl=videyUrl; hideExternalChrome();
     video.src=videyUrl; video.load();
   }
-  function playR2(){
-    mode='r2'; videoUrl=r2Url; showOwnChrome();
-    var sp=$('spinner'); if(sp) sp.hidden=false;
-    video.src=r2Url; video.load();
-  }
 
   if (/^https?:\/\//i.test(srcParam)) {
-  mode='direct'; videoUrl=srcParam; hideExternalChrome();
-  video.src=srcParam; video.load();
-} else if (isId) {
-  var sp0=$('spinner'); if(sp0) sp0.hidden=false;
-  // Cek metadata R2 dulu (1 JSON kecil)...
-  fetch('/api/video/' + vid, { credentials:'same-origin' })
-    .then(function(r){ return r.ok ? r.json() : null; })
-    .then(function(m){ if(m && m.id && !m.error){ applyMeta(m); playR2(); } else { playVidey(); } })
-    .catch(function(){ playVidey(); });
-}
+    mode='direct'; videoUrl=srcParam; hideExternalChrome();
+    video.src=srcParam; video.load();
+  } else if (isId) {
+    mode = 'local';
+    
+    // Pencarian video dari array MAIN/MORE berdasarkan ID (menghapus tanda '@')
+    var currentVideo = ALL_VIDEOS.find(function(v) {
+      var cleanUser = v.user.replace('@', '');
+      return cleanUser === vid || v.user === vid;
+    });
 
-  // Pengaman terakhir: kalau R2 ternyata gagal diputar, baru coba videy.
+    if (currentVideo) {
+      videoUrl = currentVideo.target; // Menggunakan link colahcola078.github.io
+      if (titleEl) titleEl.textContent = currentVideo.user;
+    } else {
+      // Fallback jika ID tidak ada di list
+      videoUrl = vid + '.mp4';
+      if (titleEl) titleEl.textContent = vid;
+    }
+
+    showOwnChrome();
+    video.src = videoUrl;
+    video.load();
+  }
+
   var triedVideyFb=false;
   video.addEventListener('error', function(){
-    if (mode==='r2' && !triedVideyFb && videyUrl){ triedVideyFb=true; playVidey(); }
+    if (mode==='local' && !triedVideyFb && videyUrl){ triedVideyFb=true; playVidey(); }
   });
 
   function fmt(t){ if(!isFinite(t)||t<0) t=0; var m=Math.floor(t/60), s=Math.floor(t%60); return m+':'+(s<10?'0'+s:s); }
@@ -122,18 +157,14 @@
     if(titleEl && m.title){ titleEl.textContent = m.title; document.title = m.title + ' — ' + (window.__brand || 'Watch'); }
     if(dateEl) dateEl.textContent = timeAgo(m.uploadedAt);
     if(viewEl) viewEl.textContent = fmtViews(m.views) + ' views';
-    // Own (R2) video with a generated thumbnail → use it as the poster.
     if(m.hasThumb && m.id) setPoster('/thumb/' + m.id + '.jpg', true);
   }
 
   var counted=false;
   video.addEventListener('play', function(){
-    if(counted || mode!=='r2' || !vid) return; counted=true;
+    if(counted || mode!=='local' || !vid) return; counted=true;
     try{ var k='sd_viewed_'+vid; if(sessionStorage.getItem(k)) return; sessionStorage.setItem(k,'1'); }catch(e){}
-    fetch('/api/view/'+vid, { method:'POST', credentials:'same-origin' })
-      .then(function(r){ return r.ok ? r.json() : null; })
-      .then(function(d){ if(d && d.views!=null && viewEl) viewEl.textContent = fmtViews(d.views)+' views'; })
-      .catch(function(){});
+    // Fetch count log statis/diabaikan karena tidak ada API
   });
 
   var bigPlay=$('bigPlay'), spinner=$('spinner'), flashEl=$('flash');
@@ -158,23 +189,19 @@
   if(playBtn) playBtn.addEventListener('click', toggle);
   video.addEventListener('click', toggle);
 
-  // ── LOGIKA INTELLIGENT AUTO-HIDE CONTROLS ENGINE ──────────────────────────
   var controlsTimeout = null;
-
   function showControls() {
-    root.classList.remove('hide-controls'); // Munculkan controls wrapper
+    root.classList.remove('hide-controls'); 
     if (controlsTimeout) {
       clearTimeout(controlsTimeout);
     }
-    // Jika sedang berstatus putar (playing), hitung mundur 3 detik untuk menyembunyikan
     if (root.getAttribute('data-state') === 'playing') {
       controlsTimeout = setTimeout(function () {
         root.classList.add('hide-controls');
-      }, 3000); // 3 Detik batas toleransi diam
+      }, 3000); 
     }
   }
 
-  // Listener gerakan/sentuhan pada area player utama
   root.addEventListener('mousemove', showControls);
   root.addEventListener('click', showControls);
   root.addEventListener('touchstart', showControls);
@@ -184,7 +211,7 @@
     show(iconPlay,false); 
     show(iconPause,true); 
     flash('play'); 
-    showControls(); // Memicu hide-controls otomatis saat pemutaran berjalan
+    showControls(); 
   });
 
   video.addEventListener('pause', function(){ 
@@ -192,7 +219,7 @@
     show(iconPlay,true); 
     show(iconPause,false); 
     flash('pause'); 
-    root.classList.remove('hide-controls'); // Batalkan penyembunyian saat video dijeda
+    root.classList.remove('hide-controls'); 
     if (controlsTimeout) {
       clearTimeout(controlsTimeout);
     }
@@ -290,7 +317,6 @@
     });
   }
 
-  // ── Related videos + autoplay-next ──────────────────────────────────────
   var relatedWrap=$('relatedWrap'), relatedGrid=$('relatedGrid'), autoToggle=$('autoToggle');
   var nextOverlay=$('nextOverlay'), nextThumbEl=$('nextThumb'), nextTitleEl=$('nextTitle'),
       nextCountEl=$('nextCount'), nextCancel=$('nextCancel'), nextNow=$('nextNow');
@@ -314,33 +340,28 @@
 
   var SMARTLINK = 'https://crn77.com/4/11135211';
   var SPON_POS  = 2;
-  function sponsoredCard(){
-    return '<a class="rel-card rel-sponsored" href="'+SMARTLINK+'" target="_blank" rel="noopener nofollow sponsored">'+
-      '<div class="rel-thumb"><div class="rel-spon-bg"></div>'+
-      '<span class="rel-badge">'+T.sponsored+'</span>'+
-      '<div class="rel-spon-cta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg></div></div>'+
-      '<div class="rel-info"><div class="rel-title">'+T.sponsoredTitle+'</div>'+
-      '<div class="rel-meta rel-spon-meta">'+T.sponsoredMeta+'</div></div></a>';
-  }
 
   if(relatedWrap){
-  // Membuat daftar video secara statis sesuai isi repositori Anda
-  var items = [{ id: 'uRanglaTAU', title: 'uRanglaTAU' }];
-  for (var i = 1; i <= 24; i++) {
-    items.push({ id: 'uRanglaTAU' + i, title: 'uRanglaTAU ' + i });
-  }
+    // Filter dan mapping otomatis dari ALL_VIDEOS
+    var items = ALL_VIDEOS.filter(function(v) {
+      var cleanUser = v.user.replace('@', '');
+      return cleanUser !== vid && v.user !== vid;
+    }).map(function(v) {
+      var cleanId = v.user.replace('@', '');
+      return {
+        id: cleanId,
+        title: v.user
+      };
+    });
 
-  // Saring agar video yang sedang diputar saat ini tidak muncul di daftar bawah
-  items = items.filter(function(v){ return v.id !== vid; });
-
-  if (items.length) {
-    nextVideo = items[0]; // Menentukan video auto-play berikutnya
-    var cards = items.map(relCard);
-    
-    relatedGrid.innerHTML = cards.join('');
-    relatedWrap.hidden = false;
+    if (items.length) {
+      nextVideo = items[0]; // Set video otomatis selanjutnya
+      var cards = items.slice(0, 12).map(relCard); // Batasi maksimal 12 rekomendasi
+      
+      relatedGrid.innerHTML = cards.join('');
+      relatedWrap.hidden = false;
+    }
   }
-}
 
   if(autoToggle){
     setAutoplay(autoplayOn());
