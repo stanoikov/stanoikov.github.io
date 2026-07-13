@@ -384,7 +384,7 @@ const ALL_VIDEOS = MAIN.concat(MORE);
     const thumb = v.hasThumb
       ? `<img src="/thumb/${esc(v.id)}.jpg" alt="" loading="lazy" decoding="async">`
       : '<div class="rel-ph"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></div>';
-    return `<a class="rel-card" href="watch.html?v=${esc(v.id)}">` +
+    return `<a class="rel-card" href="?v=${esc(v.id)}">` +
       `<div class="rel-thumb">${thumb}${v.duration ? `<span class="rel-dur">${fmtDur(v.duration)}</span>` : ''}</div>` +
       `<div class="rel-info"><div class="rel-title">${esc(v.title || v.filename || T.untitled)}</div>` +
       `<div class="rel-meta">${fmtViews(v.views)} ${T.views} \u00b7 ${timeAgo(v.uploadedAt)}</div></div></a>`;
@@ -409,7 +409,7 @@ const ALL_VIDEOS = MAIN.concat(MORE);
     autoToggle.addEventListener('click', () => { setAutoplay(autoToggle.getAttribute('aria-checked') !== 'true'); });
   }
 
-  const goNext = () => { if (nextVideo) location.href = `watch.html?v=${nextVideo.id}`; };
+  const goNext = () => { if (nextVideo) location.href = `?v=${nextVideo.id}`; };
   const cancelNext = () => { if (countTimer) { clearInterval(countTimer); countTimer = null; } if (nextOverlay) nextOverlay.hidden = true; };
   if (nextCancel) nextCancel.addEventListener('click', cancelNext);
   if (nextNow) nextNow.addEventListener('click', goNext);
