@@ -1,9 +1,9 @@
 const MAIN = [
-  { user: "@XPglsQ1c1", src: "https://cdn.videy.co/XPglsQ1c1.mp4" },
-  { user: "@rNqOw2C11", src: "https://cdn.videy.co/rNqOw2C11.mp4" },
-  { user: "@Shr4oHQ01", src: "https://cdn.videy.co/Shr4oHQ01.mp4" },
-  { user: "@SGQgUihZ1", src: "https://cdn.videy.co/SGQgUihZ1.mp4" },
-  { user: "@8FRGZPuG1", src: "https://cdn.videy.co/8FRGZPuG1.mp4" }
+  { user: "@XPglsQ1c1", src: "https://cdn2.videy.co/XPglsQ1c1.mp4" },
+  { user: "@rNqOw2C11", src: "https://cdn2.videy.co/rNqOw2C11.mp4" },
+  { user: "@Shr4oHQ01", src: "https://cdn2.videy.co/Shr4oHQ01.mp4" },
+  { user: "@SGQgUihZ1", src: "https://cdn2.videy.co/SGQgUihZ1.mp4" },
+  { user: "@8FRGZPuG1", src: "https://cdn2.videy.co/8FRGZPuG1.mp4" }
 ];
 
 // Pastikan array MORE terdefinisi agar tidak terjadi ReferenceError
