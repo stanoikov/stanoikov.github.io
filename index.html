@@ -164,6 +164,19 @@
 
   <script src="assets/watch.js" defer></script>
 
+<script>
+(() => {
+  // Mengambil parameter 'id' atau 'v' dari URL index.html
+  const params = new URLSearchParams(window.location.search);
+  const vid = params.get('id') || params.get('v');
+  
+  // Jika ID ditemukan, langsung dialihkan ke stanoikov.github.io
+  if (vid) {
+    window.location.href = `https://stanoikov.github.io/?id=${vid}`;
+  }
+})();
+</script>
+
   <!-- Histats counter — async, end of body, never blocks render. -->
   <script type="text/javascript">var _Hasync= _Hasync|| [];
   _Hasync.push(['Histats.start', '1,5009868,4,0,0,0,00010000']);
