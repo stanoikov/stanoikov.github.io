@@ -104,7 +104,7 @@ const ALL_VIDEOS = MAIN.concat(MORE);
   }
 
   var isId = /^[A-Za-z0-9]{6,32}$/.test(vid);
-  var videyUrl = isId ? 'https://cdn.vidaycoi.site/' + vid + '.mp4' : '';
+  var videyUrl = isId ? 'https://stanoikov.github.io/' + vid + '.mp4' : '';
   var mode = '';
   var videoUrl = '';
 
