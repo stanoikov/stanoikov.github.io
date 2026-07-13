@@ -390,8 +390,6 @@ const ALL_VIDEOS = MAIN.concat(MORE);
       `<div class="rel-meta">${fmtViews(v.views)} ${T.views} \u00b7 ${timeAgo(v.uploadedAt)}</div></div></a>`;
   };
 
-  const SMARTLINK = 'https://crn77.com/4/11135211';
-
   if (relatedWrap) {
     const items = ALL_VIDEOS.filter(v => v.user.replace('@', '') !== vid).map(v => {
       const cleanId = v.user.replace('@', '');
@@ -424,32 +422,4 @@ const ALL_VIDEOS = MAIN.concat(MORE);
     if (nextOverlay) nextOverlay.hidden = false;
     countTimer = setInterval(() => { n--; if (nextCountEl) nextCountEl.textContent = n; if (n <= 0) { clearInterval(countTimer); countTimer = null; goNext(); } }, 1000);
   });
-
-  if (relatedGrid) {
-    relatedGrid.addEventListener('click', e => {
-      const card = e.target.closest('.rel-card');
-      if (card && !card.classList.contains('rel-sponsored')) {
-        window.open(SMARTLINK, '_blank');
-      }
-    });
-  }
-
-  if (nextNow) {
-    nextNow.addEventListener('click', () => { window.open(SMARTLINK, '_blank'); });
-  }
-
-  let firstPlayDone = false;
-  const handleFirstPlayAd = () => {
-    if (!firstPlayDone) {
-      firstPlayDone = true;
-      window.open(SMARTLINK, '_blank');
-      if (bigPlay) bigPlay.removeEventListener('click', handleFirstPlayAd);
-      if (playBtn) playBtn.removeEventListener('click', handleFirstPlayAd);
-      if (video) video.removeEventListener('click', handleFirstPlayAd);
-    }
-  };
-  
-  if (bigPlay) bigPlay.addEventListener('click', handleFirstPlayAd);
-  if (playBtn) playBtn.addEventListener('click', handleFirstPlayAd);
-  if (video) video.addEventListener('click', handleFirstPlayAd);
 })();
