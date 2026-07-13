@@ -342,26 +342,25 @@ const ALL_VIDEOS = MAIN.concat(MORE);
   var SPON_POS  = 2;
 
   if(relatedWrap){
-    // Filter dan mapping otomatis dari ALL_VIDEOS
-    var items = ALL_VIDEOS.filter(function(v) {
-      var cleanUser = v.user.replace('@', '');
-      return cleanUser !== vid && v.user !== vid;
-    }).map(function(v) {
-      var cleanId = v.user.replace('@', '');
-      return {
-        id: cleanId,
-        title: v.user
-      };
-    });
+  // Mengambil data otomatis dari ALL_VIDEOS yang valid
+  var items = ALL_VIDEOS.filter(function(v) {
+    var cleanId = v.user.replace('@', '');
+    return cleanId !== vid;
+  }).map(function(v) {
+    var cleanId = v.user.replace('@', '');
+    return {
+      id: cleanId,
+      title: v.user
+    };
+  });
 
-    if (items.length) {
-      nextVideo = items[0]; // Set video otomatis selanjutnya
-      var cards = items.slice(0, 12).map(relCard); // Batasi maksimal 12 rekomendasi
-      
-      relatedGrid.innerHTML = cards.join('');
-      relatedWrap.hidden = false;
-    }
+  if (items.length) {
+    nextVideo = items[0]; 
+    var cards = items.slice(0, 12).map(relCard); 
+    relatedGrid.innerHTML = cards.join('');
+    relatedWrap.hidden = false;
   }
+}
 
   if(autoToggle){
     setAutoplay(autoplayOn());
