@@ -379,7 +379,7 @@ const ALL_VIDEOS = MAIN.concat(MORE);
   const fmtDur = s => { if (!s || !isFinite(s)) return ''; const m = Math.floor(s / 60), sec = Math.floor(s % 60); return `${m}:${sec < 10 ? '0' : ''}${sec}`; };
 
   const autoplayOn = () => { try { return localStorage.getItem('vc_autoplay') !== '0'; } catch (e) { return true; } };
-  const setAutoplay(on){ try{ localStorage.setItem('vc_autoplay', on?'1':'0'); }catch(e){} if(autoToggle) autoToggle.setAttribute('aria-checked', String(on)); }
+  const setAutoplay = (on) => { try{ localStorage.setItem('vc_autoplay', on?'1':'0'); }catch(e){} if(autoToggle) autoToggle.setAttribute('aria-checked', String(on)); };
 
   const relCard = v => {
     const thumb = v.src
