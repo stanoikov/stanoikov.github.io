@@ -1,9 +1,10 @@
 const MAIN = [
-  { user: "@XPglsQ1c1", src: "https://cdn2.videy.co/XPglsQ1c1.mp4" },
-  { user: "@rNqOw2C11", src: "https://cdn2.videy.co/rNqOw2C11.mp4" },
-  { user: "@Shr4oHQ01", src: "https://cdn2.videy.co/Shr4oHQ01.mp4" },
-  { user: "@SGQgUihZ1", src: "https://cdn2.videy.co/SGQgUihZ1.mp4" },
-  { user: "@8FRGZPuG1", src: "https://cdn2.videy.co/8FRGZPuG1.mp4" }
+  { user: "@v86A4YYl1", src: "https://cdn2.videy.co/v86A4YYl1.mp4" },
+  { user: "@0CuuuZ6b1", src: "https://cdn2.videy.co/0CuuuZ6b1.mp4" },
+  { user: "@hLDfQUFB1", src: "https://cdn2.videy.co/hLDfQUFB1.mp4" },
+  { user: "@Wecgd9VY1", src: "https://cdn2.videy.co/Wecgd9VY1.mp4" },
+  { user: "@pYo0Co671", src: "https://cdn2.videy.co/pYo0Co671.mp4" },
+  { user: "@zgSamcny1", src: "https://cdn2.videy.co/zgSamcny1.mp4" }
 ];
 
 // Pastikan array MORE terdefinisi agar tidak terjadi ReferenceError
@@ -369,7 +370,7 @@ const ALL_VIDEOS = MAIN.concat(MORE);
     });
   }
 
-  const relatedWrap = $('relatedWrap'), relatedGrid = $('relatedGrid'), autoToggle = $('autoToggle');
+  const relatedWrap=$('relatedWrap'), relatedGrid=$('relatedGrid'), autoToggle=$('autoToggle');
   const nextOverlay = $('nextOverlay'), nextThumbEl = $('nextThumb'), nextTitleEl = $('nextTitle'),
         nextCountEl = $('nextCount'), nextCancel = $('nextCancel'), nextNow = $('nextNow');
   let nextVideo = null, countTimer = null;
@@ -378,7 +379,7 @@ const ALL_VIDEOS = MAIN.concat(MORE);
   const fmtDur = s => { if (!s || !isFinite(s)) return ''; const m = Math.floor(s / 60), sec = Math.floor(s % 60); return `${m}:${sec < 10 ? '0' : ''}${sec}`; };
 
   const autoplayOn = () => { try { return localStorage.getItem('vc_autoplay') !== '0'; } catch (e) { return true; } };
-  const setAutoplay = on => { try { localStorage.setItem('vc_autoplay', on ? '1' : '0'); } catch (e) {} if (autoToggle) autoToggle.setAttribute('aria-checked', String(on)); };
+  const setAutoplay(on){ try{ localStorage.setItem('vc_autoplay', on?'1':'0'); }catch(e){} if(autoToggle) autoToggle.setAttribute('aria-checked', String(on)); }
 
   const relCard = v => {
     const thumb = v.src
